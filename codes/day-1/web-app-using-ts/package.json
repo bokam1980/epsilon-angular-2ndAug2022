@@ -1,0 +1,14 @@
+{
+  "name": "web-app-using-ts",
+  "version": "1.0.0",
+  "description": "simple web app",
+  "main": "index.js",
+  "scripts": {
+    "load": "lite-server"
+  },
+  "author": "joydip",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

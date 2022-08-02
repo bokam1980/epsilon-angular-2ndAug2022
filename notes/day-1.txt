@@ -1,0 +1,37 @@
+1. client-side framework
+2. Client-side app
+3. client-side vs server side app/framework
+4. server-side rendering and data pre-fetching for client-side app
+5. component
+6. SPA
+7. client-side routing
+8. application artifacts:
+	a. packages
+	b. transpiler
+	c. bundler
+	d. application development server
+	e. application structure
+	f. deisgn: HTML	
+	g. styling: CSS
+	h. coding: JavaScript/TypeScript/NativeScript etc.
+
+9. JS modules, module format, module loader etc.
+
+Node js folder:
+C:\Program Files\nodejs
+
+global folder for 4rd party NPM packages:
+>C:\Users\<user-name>\AppData\Roaming\npm
+
+command to install 3rd party node js packages:
+>npm install <package-name> --location=global (node v>=16)
+>npm install <package-name> --global (node v<16)
+
+command to uninstall 3rd party node js packages:
+>npm uninstall <package-name> --location=global (node v>=16)
+>npm uninstall <package-name> --global (node v<16)
+
+
+
+application configuration: package.json (root of the directory)
+name of the app, version of the app, author of the app, packages for this app - development or production, scripts etc.
