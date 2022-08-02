@@ -35,3 +35,36 @@ command to uninstall 3rd party node js packages:
 
 application configuration: package.json (root of the directory)
 name of the app, version of the app, author of the app, packages for this app - development or production, scripts etc.
+
+
+modular JS code
+
+JS file => one module
+
+export add, subtract methods from utility.js
+we can import then in index.js
+
+JS code => get it executed
+
+C, C++, C#, Java => 
+
+C++
+V8, spidermonkey, JavaScript Core (Nitro), edge
+
+module: an api to expose certain members of a JS file to the outside world
+
+module format: 
+	a. Common JS, ES6 format, AMD (asynchronous module definition), UMD (Universal module definition) etc...
+
+Node JS uses CommonJS module format
+
+module loader: which loads JS modules in runtime (browser/node/...) and resolves dependencies amongst the JS files
+Node JS has a common js module loader s/w (built-in)
+
+unfortunately browsers do not have this module-loader. You need to load a module loader in browser first, before loading source code written in some module format.
+
+require js, system js etc....
+
+
+
+
