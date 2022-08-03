@@ -4,7 +4,8 @@
   "description": "simple web app",
   "main": "index.js",
   "scripts": {
-    "load": "lite-server"
+    "load": "lite-server",
+    "transpile": "tsc"
   },
   "author": "joydip",
   "license": "MIT",
