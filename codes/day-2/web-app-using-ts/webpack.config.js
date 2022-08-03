@@ -5,7 +5,7 @@ const path = require('path')
 const configObject = {
     entry: {
         main: path.resolve(__dirname, './src/index.ts'),
-        utility: path.resolve(__dirname, './src/utility.ts')
+        utility: path.resolve(__dirname, './src/services/utility.ts')
     },
     output: {
         filename: '[name].bundle.js',
@@ -18,7 +18,7 @@ const configObject = {
                 use: 'ts-loader',
                 exclude: /node_modules/,
                 resolve: {
-                    extensions: ['.ts', '.js', '.tsx', '.jsx']
+                    extensions: ['.ts']
                 }
             },
             {

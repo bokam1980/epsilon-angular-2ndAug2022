@@ -5,9 +5,13 @@
         "target": "ES3",
         "module": "AMD",
         "lib": [
-            "DOM"
+            "DOM",
+            "ES2015"
         ],
         "forceConsistentCasingInFileNames": true,
-        "strict": true
+        "strict": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "moduleResolution": "Node"
     }
 }

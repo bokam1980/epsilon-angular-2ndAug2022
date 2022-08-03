@@ -83,6 +83,28 @@ ES2015+ => <ES6 features
 
 babel, typescript etc.
 
+NPM => node_modules
+yarn => node_modules
+bower => bower_components
+
+
+zone.js => NgZone
+
+
+features:
+
+	angular modules: logical way of grouping app assets
+	products
+		allproducts
+		singleproduct
+	cart
+		wishlist
+		cart
+	payment
+		c1, c2, c3....
+	delivery
+	order
+
 
 
 

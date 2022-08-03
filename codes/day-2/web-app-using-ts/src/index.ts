@@ -1,16 +1,6 @@
-import { add, multiply, subtract } from "./utility";
+import { PlatformRef } from "@angular/core";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { RootModule } from "./root.module";
 
-const addResult = add(10, 20)
-const subResult = subtract(10, 4)
-const multiResult = multiply(10, 4)
-console.log(addResult, subResult)
-
-const spanEle = <HTMLSpanElement>document.getElementById('resultSpan');
-spanEle.innerText = multiResult.toString()
-
-const buttonEle = <HTMLButtonElement>document.getElementById('btnClick')
-buttonEle.addEventListener(
-    'click',
-    () => {
-        console.log((<HTMLInputElement>document.getElementById('txtName')).value)
-    })
+const platform: PlatformRef = platformBrowserDynamic()
+platform.bootstrapModule(RootModule)
