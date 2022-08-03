@@ -16,3 +16,4 @@ console.log(addResult, subResult)
 const spanEle = <HTMLSpanElement>document.getElementById('resultSpan');
 spanEle.innerText = addResult.toString()
 //console.log(module)
+console.log('hello')
