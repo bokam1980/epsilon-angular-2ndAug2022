@@ -94,16 +94,20 @@ zone.js => NgZone
 features:
 
 	angular modules: logical way of grouping app assets
-	products
+	products: 
 		allproducts
 		singleproduct
+	products.module.ts
 	cart
 		wishlist
 		cart
+	cart.module.ts
 	payment
 		c1, c2, c3....
 	delivery
 	order
+
+root.module.ts
 
 
 
