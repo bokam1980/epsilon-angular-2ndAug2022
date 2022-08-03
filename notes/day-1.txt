@@ -65,6 +65,24 @@ unfortunately browsers do not have this module-loader. You need to load a module
 
 require js, system js etc....
 
+requirejs understands AMD module format
+
+soln: get your module format converted to AMD format
+convert JS code written using latest features back to vanilla JS (older version)
+
+2015+
+ECMAScript (ES6)
+
+<ES6
+<ES5
+
+ES 2015+ 
+
+transpilation: 
+ES2015+ => <ES6 features
+
+babel, typescript etc.
+
 
 
 

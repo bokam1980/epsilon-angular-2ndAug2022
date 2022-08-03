@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "dist",
+        "target": "ES3",
+        "module": "AMD",
+        "lib": [
+            "DOM"
+        ],
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    }
+}
