@@ -2,18 +2,10 @@
   "name": "web-app-using-ts",
   "version": "1.0.0",
   "description": "simple web app",
-  "main": "index.js",
-  "scripts": {
-    "load": "lite-server",
-    "transpile": "tsc -w"
-  },
+  "scripts": {},
   "author": "joydip",
   "license": "MIT",
   "devDependencies": {
-    "lite-server": "^2.6.1",
     "typescript": "^4.7.4"
-  },
-  "dependencies": {
-    "requirejs": "^2.3.6"
   }
 }
