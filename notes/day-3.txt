@@ -85,3 +85,4 @@ event binding:
 	(event-name-of-the-element)="method-of-clas(args....)"
 
 
+
