@@ -1,0 +1,58 @@
+1. component: design + code + metadata
+2. directives: without deisgn (code + metadata)
+3. pipe: without deisgn (code + metadata)
+4. services: without deisgn (code + optional-metadata)
+5. modulles: without deisgn (code + metadata)
+
+data-binding and property binding
+event-binding
+dependency injection
+change tracking
+make RESTful API calls
+Routing
+interceptors
+etc.
+
+
+Decorators: 
+@Component()/@Directive()/@Pipe()/@Injectable()/@NgModule
+export class X(){}
+
+@Inject, @Host, @Input, @Output etc.
+
+
+users
+	user-registration
+	user-subscription
+	
+	wishlist
+		wishlist-products
+		wishlist.module.ts
+	users.module.ts
+
+products
+	product-list.component.ts => ProductListComponent
+	add-product.component.ts
+	view-product.component.ts
+	products.module.ts
+orders
+	order-summary.component.ts => OrderSummaryComponent
+	place-order.component.ts
+	orders.module.ts => @NgModule({ declarations:[OrderSummaryComponent], exports:[OrderSummaryComponent]})
+
+payments
+	payments.module.ts => @NgModule({ imports:[OrdersModule]})
+	payment.component.ts
+
+
+app
+	app.component.ts
+	app.module.ts => @NgModule({ imports:[ UsersModule, ProductsModule, PaymentsModule,....]})
+
+helps you to create custom HTML elements
+
+<app-welcome></app-welcome>
+
+
+
+
