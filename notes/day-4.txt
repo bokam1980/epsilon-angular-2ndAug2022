@@ -1,0 +1,6 @@
+1. use 3rd party styles: bootstrap
+2. service - Part-1 + Part-2
+	a. service
+	b. asynchronous
+3. Pipe
+	
