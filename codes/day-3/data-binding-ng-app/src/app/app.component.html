@@ -5,7 +5,7 @@ Enter Value:&nbsp;<input type="text" name="txtValue" id="txtValue" #input>
 <!-- <button (click)="increaseMargin($event, input.value)">Increase margin</button> -->
 <button (click)="increaseMargin(input.value)">Increase margin</button>
 <br>
-<span [style.margin-left.px]="marginValue">Margin from left is: {{ marginValue }}</span>
+<span class="borderStyle" [style.margin-left.px]="marginValue">Margin from left is: {{ marginValue }}</span>
 
 <br>
 <ul *ngIf="numbers.length>0;else alternateNumbers">
@@ -19,7 +19,12 @@ Enter Value:&nbsp;<input type="text" name="txtValue" id="txtValue" #input>
 
 <ol *ngIf="people.length>0;else alternatePeople">
   <header>Displaying names</header>
-  <li *ngFor="let p of people">{{ p.name }}</li>
+  <li *ngFor="let p of people">
+    <div>
+      <span style="float: left">{{p.name}}</span>
+      <span style="float:right">{{p.salary}}</span>
+    </div>
+  </li>
 </ol>
 
 <ng-template #alternatePeople>

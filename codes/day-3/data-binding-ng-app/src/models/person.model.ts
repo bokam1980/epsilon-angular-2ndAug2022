@@ -1,3 +1,4 @@
+/*
 export class Person {
     // private _name: string;
     // private _id: number;
@@ -29,5 +30,18 @@ export class Person {
     public set salary(value: number) {
         this._salary = value;
     }
-
 }
+
+export interface Person {
+    name: string;
+    id: number;
+    salary: number;
+    // print(): string;
+}
+*/
+export type Person = {
+    name: string;
+    id: number;
+    salary: number;
+}
+
