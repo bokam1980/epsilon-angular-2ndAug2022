@@ -6,9 +6,41 @@ Enter Value:&nbsp;<input type="text" name="txtValue" id="txtValue" #input>
 <button (click)="increaseMargin(input.value)">Increase margin</button>
 <br>
 <span [style.margin-left.px]="marginValue">Margin from left is: {{ marginValue }}</span>
+
+<br>
+<ul *ngIf="numbers.length>0;else alternateNumbers">
+  <header>Displaying numbers</header>
+  <li *ngFor="let num of numbers">{{ num }}</li>
+</ul>
+
+<ng-template #alternateNumbers>
+  <div>No values</div>
+</ng-template>
+
+<ol *ngIf="people.length>0;else alternatePeople">
+  <header>Displaying names</header>
+  <li *ngFor="let p of people">{{ p.name }}</li>
+</ol>
+
+<ng-template #alternatePeople>
+  <div>No records</div>
+</ng-template>
 <!--
    var input = document.createElement('input')
    document.createElement('button').addEventListener('click',(e)=>{
      input.value
    })
+
+    numbers = [1, 2, 3, 4, 5]
+   var ulObj = document.createElement('ul')
+   for(let i = 0;i<numbers.length;i++){
+    var liEle = document.createElement(li)
+    let num = numbers[i]
+    liEle.setAttribute('text',num.toString())
+    ulObj.appendChild(liEle)
+   }
+
+   for...of
+
+   document.body.appendChild(ulObj)
 -->

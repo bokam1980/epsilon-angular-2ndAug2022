@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { peopleRecords } from 'src/repository/peopleRecords';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   marginValue = 30
   welcomeMessage = 'Welcome to data binding'
+  numbers = []
+  people = peopleRecords
 
   // increaseMargin(e: any, value: string): void { console.log(e)}
   increaseMargin(value: string): void {

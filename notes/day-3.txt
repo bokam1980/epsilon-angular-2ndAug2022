@@ -1,5 +1,20 @@
 1. component: design + code + metadata
 2. directives: without deisgn (code + metadata)
+	a. component directive
+
+	@Component({ selector:'app-x'})
+	class XComponent{
+	}
+
+	b. structural directive: *dir-name => *ngFor, *ngIf etc...
+
+	@Directive({ name:'[ngFor]'})
+	class XDirective{
+		method(epression){ return...}
+	}
+
+	c. attribute directive: ngClass, ngStyle, ngModel etc...
+
 3. pipe: without deisgn (code + metadata)
 4. services: without deisgn (code + optional-metadata)
 5. modulles: without deisgn (code + metadata)
