@@ -1,0 +1,14 @@
+<h2>{{welcomeMessage}}</h2>
+<br />
+Enter Value:&nbsp;<input type="text" name="txtValue" id="txtValue" #input>
+<br>
+<!-- <button (click)="increaseMargin($event, input.value)">Increase margin</button> -->
+<button (click)="increaseMargin(input.value)">Increase margin</button>
+<br>
+<span [style.margin-left.px]="marginValue">Margin from left is: {{ marginValue }}</span>
+<!--
+   var input = document.createElement('input')
+   document.createElement('button').addEventListener('click',(e)=>{
+     input.value
+   })
+-->

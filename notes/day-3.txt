@@ -55,4 +55,18 @@ helps you to create custom HTML elements
 
 
 
+Data-binding: 
+	binding data/model/property of a component in the design
+	flow of data: from code to UI
+	declarative syntaxes:
+		a. interpolation: {{ prop-name }}
+		Note: does convert property value to string
+		b. property binding: [attribute-of-the-element]='prop-name'
+		Note: does not convert property value to string
+
+event binding: 
+	technique to pass data from UI to code
+	declarative syntax: 
+	(event-name-of-the-element)="method-of-clas(args....)"
+
 
