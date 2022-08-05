@@ -3,4 +3,26 @@
 	a. service
 	b. asynchronous
 3. Pipe
+
+Revision:
+Component: design + code + metadata
+directive
+pipe
+service
+module
 	
+module metadata
+ declarations: register component, directive and pipes (NOT SERVICES)
+ providers: register SERVICES, nothing else
+ imports: register the name of built-in or application modules
+ exports: which of the assets, should be made available to the entire application, is mentioned [modules, components, directives, pipes (not services)]
+ bootstrap: which components should be automatically instantiated
+	
+component:
+---------------------------------
+code => design
+
+data binding: 
+	a. interpolation
+	b. property binding
+

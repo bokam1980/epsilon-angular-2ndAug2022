@@ -1,5 +1,6 @@
 in an angular application, you need to display some product records in a table through a component
 create a model interface to represent the product record
+create a repository (an array) to store the given records
 create a separate component for this and rgister the same in a separate child module
 now, register the child module in the app module 
 use the component to display products, nested in app component design
