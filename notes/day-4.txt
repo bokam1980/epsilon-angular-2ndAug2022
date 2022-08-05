@@ -77,5 +77,33 @@ component:
 	ng generate component <subdirectory-under-app>/<component-name>
 	a sub-directory by the same name as that of the component-name will be created first inside the subdirectory (same as that of  <subdirectory-under-app>) inside app directory and then the component file related assets will be created and placed in the same
 
+pipes:
+	<data>|<pipe-name>:arg1:arg2:arg3
+
+	productRecords(array)|productfilter:filterText:asha:sachkjas
+
+
+	a. create a class
+	b. decorate it with @Pipe and provide value for 'name' attribute
+	c. implement an method transform (from PipeTransform interface from @angular/core)
+	@Pipe({
+		name:'productfilter'
+	})
+	export class XPipe{
+		transform(inputData,...args){
+			return 
+		}
+	}
+
+<app-root>
+
+@Component({
+	selector:'app-root'
+})
+class AppComponent
+
+
+
+
 
 

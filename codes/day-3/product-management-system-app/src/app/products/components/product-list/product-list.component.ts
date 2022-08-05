@@ -8,5 +8,11 @@ import { products } from 'src/repository/productRepository';
 })
 export class ProductListComponent {
   productRecords = products
+  filterText = ''
+
   constructor() { }
+
+  updateFilterText(updatedFilterText: string) {
+    this.filterText = updatedFilterText;
+  }
 }
