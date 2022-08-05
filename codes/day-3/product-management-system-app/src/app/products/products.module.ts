@@ -1,0 +1,18 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { FilterProductComponent } from './components/filter-product/filter-product.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+
+@NgModule({
+  declarations: [
+    ProductListComponent,
+    FilterProductComponent,
+    AddProductComponent
+  ],
+  imports: [
+    CommonModule
+  ],
+  exports: [ProductListComponent]
+})
+export class ProductsModule { }

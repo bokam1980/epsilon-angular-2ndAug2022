@@ -6,13 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Product Managment System';
-  marginValue = 30;
-  backColor = 'aqua'
+  // title = 'Product Managment System';
+  // marginValue = 30;
+  // backColor = 'aqua'
 
-  numbers = [1, 2, 3, 4, 5]
+  // numbers = [1, 2, 3, 4, 5]
 
-  changeStyle(colorName: string) {
-    this.backColor = colorName
-  }
+  // changeStyle(colorName: string) {
+  //   this.backColor = colorName
+  // }
 }

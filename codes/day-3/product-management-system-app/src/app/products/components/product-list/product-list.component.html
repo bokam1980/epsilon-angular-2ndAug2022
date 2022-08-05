@@ -1,0 +1,28 @@
+<!--
+    div=>table=>thead=>tr>th(4)+tbody=>tr
+-->
+
+<div class="container container-fluid divStyle">
+    <table class="table table-dark table-striped" *ngIf="productRecords.length>0">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of productRecords">
+                <td>
+                    <div class="img-responsive">
+                        <img [src]="p.imageUrl" alt="NA" [title]="p.productName" class="imgStyle">
+                    </div>
+                </td>
+                <td>{{p.productName}}</td>
+                <td>{{p.price}}</td>
+                <td>{{p.starRating}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

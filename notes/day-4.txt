@@ -26,3 +26,56 @@ data binding:
 	a. interpolation
 	b. property binding
 
+
+JS:
+	number, boolean, string, object, Function
+	
+	undefined, NaN, null
+
+TS: any, tuple etc...
+
+models
+repository
+services
+app
+	products
+		product-list
+			product-list.component.html
+			product-list.component.css
+			product-list.component.ts
+		product-detail
+			product-detail.component.html
+			product-detail.component.css
+			product-detail.component.ts
+		add-product
+			add-product.component.html
+			add-product.component.css
+			add-product.component.ts
+		update-product
+			update-product.component.html
+			update-product.component.css
+			update-product.component.ts
+		filter-product
+			filter-product.component.html
+			filter-product.component.css
+			filter-product.component.ts
+		sort-product
+			sort-product.component.html
+			sort-product.component.css
+			sort-product.component.ts
+		products.module.ts
+	
+	app.component.html
+	app.component.css
+	app.component.ts
+	app.module.ts
+
+module:
+	ng generate module <module-name>
+	a sub-directory by the same name as that of the module-name will be created first inside app directory and then the module file will be created and placed in the same
+component:
+	ng generate component <subdirectory-under-app>/<component-name>
+	a sub-directory by the same name as that of the component-name will be created first inside the subdirectory (same as that of  <subdirectory-under-app>) inside app directory and then the component file related assets will be created and placed in the same
+
+
+
