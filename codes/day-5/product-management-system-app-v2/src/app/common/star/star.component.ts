@@ -16,6 +16,7 @@ export class StarComponent implements OnChanges {
     console.log('[Star] created')
   }
   ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes)
     console.log('changes')
     this.outerDivWidth = this.ratingValue * 14;
   }

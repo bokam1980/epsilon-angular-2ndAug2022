@@ -4,14 +4,9 @@
 
 <div class="container divStyle">
     <div class="row">
-
-        <!-- <app-filter-product></app-filter-product> -->
-        Filter By: &nbsp;
-        <div class="col-md-4">
-            <input type="text" name="txtFilter" id="txtfilter" [value]="filterText"
-                (change)="updateFilterText(filterInput.value)" #filterInput>
-        </div>
-        <!-- <app-filter-product [filterCriteria]="filterText" (filterChanged)="updateFilterText($event)"></app-filter-product> -->
+        <app-filter-product [filterCriteria]="state.filterText?state.filterText:''"
+            (filterChanged)="updateFilterText($event)">
+        </app-filter-product>
     </div>
     <div class="row">
         <!-- <span>Filtered By: {{filterText}}</span> -->
@@ -25,10 +20,22 @@
                 <option>Rating</option>
             </select>
         </div>
+        <!-- 
+            <app-sort-product></app-sort-product>
+        -->
     </div>
     <br>
-    <div class="table-responsive">
-        <table class="table" *ngIf="productRecords.length>0">
+    <ng-template #spinner>
+        <span>Loading...</span>
+    </ng-template>
+    <div *ngIf="state.errorMessage!==''">
+        <span>{{state.errorMessage}}</span>
+    </div>
+    <div class="table-responsive" *ngIf="!state.loading;else spinner">
+        <ng-template #alternate>
+            <span>No records found...</span>
+        </ng-template>
+        <table class="table" *ngIf="state.productRecords && state.productRecords.length>0;else alternate">
             <thead>
                 <tr>
                     <th>Image</th>
@@ -38,7 +45,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let p of (productRecords|productfilter:filterText)">
+                <tr
+                    *ngFor="let p of (state.productRecords?state.productRecords:[])|productfilter:(state.filterText? state.filterText:'')">
                     <td>
                         <div class="img-responsive">
                             <img [src]="p.imageUrl" alt="NA" [title]="p.productName" class="imgStyle">
