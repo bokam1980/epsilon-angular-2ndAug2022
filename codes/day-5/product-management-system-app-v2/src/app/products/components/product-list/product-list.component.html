@@ -2,14 +2,18 @@
     div=>table=>thead=>tr>th(4)+tbody=>tr
 -->
 
-<div class="container container-fluid divStyle">
+<div class="container divStyle">
     <div class="row">
 
+        <!-- <app-filter-product></app-filter-product> -->
         Filter By: &nbsp;
         <div class="col-md-4">
             <input type="text" name="txtFilter" id="txtfilter" [value]="filterText"
                 (change)="updateFilterText(filterInput.value)" #filterInput>
         </div>
+        <!-- <app-filter-product [filterCriteria]="filterText" (filterChanged)="updateFilterText($event)"></app-filter-product> -->
+    </div>
+    <div class="row">
         <!-- <span>Filtered By: {{filterText}}</span> -->
         Sort By: &nbsp;
         <div class="col-md-4">
@@ -23,26 +27,35 @@
         </div>
     </div>
     <br>
-    <table class="table table-dark table-striped" *ngIf="productRecords.length>0">
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Rating</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let p of (productRecords|productfilter:filterText)">
-                <td>
-                    <div class="img-responsive">
-                        <img [src]="p.imageUrl" alt="NA" [title]="p.productName" class="imgStyle">
-                    </div>
-                </td>
-                <td>{{p.productName|uppercase}}</td>
-                <td>{{p.price|currency:'INR'}}</td>
-                <td>{{p.starRating}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table" *ngIf="productRecords.length>0">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of (productRecords|productfilter:filterText)">
+                    <td>
+                        <div class="img-responsive">
+                            <img [src]="p.imageUrl" alt="NA" [title]="p.productName" class="imgStyle">
+                        </div>
+                    </td>
+                    <td>{{p.productName|uppercase}}</td>
+                    <td>{{p.price|currency:'INR'}}</td>
+                    <!-- <td>{{p.starRating}}</td> -->
+                    <td>
+                        <!-- <input type="text" name="txtFilter" id="txtfilter" [value]="filterText"
+                (change)="updateFilterText(filterInput.value)" #filterInput> -->
+                        <app-star [ratingValue]="p.starRating"
+                            (ratingChanged)="updateRatingOfaProduct($event,p.productId)">
+                        </app-star>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

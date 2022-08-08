@@ -1,0 +1,45 @@
+1. component
+2. module
+3. app structure
+4. angular cli commands to create component, module, pipe etc. (ng g ....)
+5. using 3rd party styles (bootstrap)
+6. pipes
+7. directives: ngFor, ngIf etc.
+
+
+textbox
+a list of orders
+
+same component
+code -> design (data binding)
+desin -> code (event binding)
+
+
+parent component <=> nested component
+parent design => nested code (data binding)
+parent design <= nested code(event binding)
+
+
+component:
+	creation phase:
+	1. comp is created (constructor is called during that time)
+	Initialization: event=> Init, method=>ngOnInit, interface=>OnInit
+	2. initialization phase begins (all class fields are initialized, the component can receive value from parent component etc)
+	updation: 
+	3. component update: if parent component gets updated, accordingly passes the updated data to the nested, the nested component as a result will be updated too
+	destruction:
+	4. component gets destroyed
+
+event name=> X (Init, Changes)
+interface name =>OnX (OnInit, OnChanges)
+method name => ngOnX (ngOnInit, ngOnChanges)
+
+component life-cycle events are fired during different stages of its lifecycle
+you can handle those events by wiring up methods to those events
+
+
+
+
+
+
+
