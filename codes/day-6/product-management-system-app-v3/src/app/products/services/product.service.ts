@@ -3,6 +3,8 @@ import { environment } from "src/environments/environment";
 import { IServiceContract } from "src/models/IServiceContract.model";
 import { Product } from "src/models/product.model";
 import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { ResponseModel } from "src/models/responseModel.model";
 
 
 // @Injectable({
@@ -20,11 +22,24 @@ export class ProductService implements IServiceContract<number, Product> {
     constructor(private _http: HttpClient) {
 
     }
-    get(id: number): Product | null {
-        return null
-    }
-    getAll(): Product[] {
-        return []
-    }
 
+    getAll(): Observable<ResponseModel<Product[]>> {
+        const obsProduct: Observable<ResponseModel<Product[]>> =
+            this._http.get<ResponseModel<Product[]>>(this.productBaseUrl)
+        return obsProduct
+    }
+    /*
+    get(id: number): Observable<ResponseModel<Product>> {
+        throw new Error("Method not implemented.");
+    }
+    insert(obj: Product): Observable<ResponseModel<Product[]>> {
+        throw new Error("Method not implemented.");
+    }
+    delete(id: number): Observable<ResponseModel<Product[]>> {
+        throw new Error("Method not implemented.");
+    }
+    update(obj: Product, id: number): Observable<ResponseModel<Product[]>> {
+        throw new Error("Method not implemented.");
+    }
+*/
 }

@@ -1,7 +1,10 @@
+import { Observable } from "rxjs";
+import { ResponseModel } from "./responseModel.model";
+
 export interface IServiceContract<in TId, TModel> {
-    get(id: TId): TModel | null;
-    getAll(): TModel[];
-    // insert(obj: TModel);
-    // delete(id: TId);
-    // update(obj: TModel, id: TId);
+    getAll(): Observable<ResponseModel<TModel[]>>;
+    // get(id: TId): Observable<ResponseModel<TModel>>;    
+    // insert(obj: TModel): Observable<ResponseModel<TModel[]>>;
+    // delete(id: TId): Observable<ResponseModel<TModel[]>>;
+    // update(obj: TModel, id: TId): Observable<ResponseModel<TModel[]>>;
 }
