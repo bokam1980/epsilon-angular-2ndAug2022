@@ -61,6 +61,11 @@ http://127.0.0.1:3003/products/{id}	DELETE		Authorization: Bearer token-value {"
 							id:1	 
 
 
+service => regular
+
+@Injectable() decorator is inherited into @Component(), @Directive, @Pipe, @NgModule()
+
+
 
 
 

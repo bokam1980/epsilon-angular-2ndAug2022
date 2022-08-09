@@ -1,9 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { PRODUCT_SERVICE } from 'src/app/utils/appconstants';
+import { Component, Inject, Injectable, OnInit } from '@angular/core';
+import { PRODUCT_SERVICE } from 'src/utils/appconstants';
 import { IServiceContract } from 'src/models/IServiceContract.model';
 import { Product } from 'src/models/product.model';
 //import { ProductService } from '../../services/product.service';
 
+//@Injectable()
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',

@@ -1,10 +1,12 @@
 import { Pipe, PipeTransform } from "@angular/core";
 import { Product } from "src/models/product.model";
 
+//@Injectable()
 @Pipe({
     name: 'productfilter'
 })
 export class ProductFilterPipe implements PipeTransform {
+    constructor() { }
     transform(value: Product[], ...args: string[]) {
         // const results: Product[] = []
         // if (value && value.length > 0 && args && args[0] !== '') {

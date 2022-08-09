@@ -6,7 +6,8 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import { ProductFilterPipe } from './pipes/product-filter.pipe';
 import { StarComponent } from '../common/star/star.component';
 //import { ProductService } from './services/product.service';
-import { PRODUCT_SERVICE, SERVICE_CLASS_NAME } from '../utils/appconstants';
+import { PRODUCT_SERVICE, SERVICE_CLASS_NAME } from '../../utils/appconstants';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { PRODUCT_SERVICE, SERVICE_CLASS_NAME } from '../utils/appconstants';
     StarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, HttpClientModule
   ],
   exports: [ProductListComponent],
   providers: [
