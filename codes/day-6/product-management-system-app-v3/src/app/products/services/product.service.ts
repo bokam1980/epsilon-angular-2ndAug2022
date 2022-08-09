@@ -1,28 +1,25 @@
+//import { Injectable } from "@angular/core";
+import { IServiceContract } from "src/models/IServiceContract.model";
 import { Product } from "src/models/product.model";
 import { products } from "src/repository/productRepository";
 
-export class ProductService {
+// @Injectable({
+//     //register the service at the root module directly from here.
+//     //No need to register again in the providers array of the root module
+//     providedIn: "root"
+// })
+export class ProductService implements IServiceContract<number, Product> {
     constructor() {
 
     }
-    getProducts(): Product[] {
-        return [...products];
-        //return []
-    }
-    getProduct(id: number) {
+    get(id: number): Product | null {
         const found = products.find(p => p.productId === id)
         if (found) {
             return { ...found }
         } else
             return null
     }
-    updateProduct(updated: Product) {
-
-    }
-    deleteProduct(id: number) {
-
-    }
-    addProduct(product: Product) {
-
+    getAll(): Product[] {
+        return [...products];
     }
 }

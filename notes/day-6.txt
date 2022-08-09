@@ -1,0 +1,47 @@
+1. interaction between a parent and a nested component
+	a. @Input(), 
+	b. @Output()
+	c. EventEmitter<T>
+
+2. component class fields
+	a. state type (any change in those affects the UI)
+	b. non-state type (those which does not affect the UI)
+
+3. services and dependency injection
+	reusable piece of logic (business/data access logic)
+	a. create instance of the class, wherever you need to use it
+	b. use angular dependency injection
+
+4. component lifecycle and lifecycle hooks
+	1. created
+	2. initialized
+		a. changes => everytime gets fired when a databound property/attribute receives new value from parent
+		b. init => one time event firing (OnInt => ngOnInit)
+	3. updated
+		changes (OnChanges => ngOnChanges)
+	4. destroyed
+		destroy (OnDestroy => ngOnDestroy)
+
+
+contract (interface) for services
+ICommonService
+	add
+	remove
+	update
+	get
+	getall
+
+ProductService => ICommonService
+
+@Inject(<token-name>) => parameter decorator
+
+providers:[
+{	
+	provide:<token-name>,
+        useClass: <service-class-name>
+}
+]
+
+
+
+	
