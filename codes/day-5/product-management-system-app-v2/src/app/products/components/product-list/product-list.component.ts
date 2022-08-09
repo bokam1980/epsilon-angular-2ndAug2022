@@ -37,6 +37,7 @@ export class ProductListComponent implements OnInit {
     try {
       // const service = new ProductService()
       this.setState({
+        
         productRecords: this.productSvcRef?.getProducts(),
         loading: false,
         errorMessage: ''
