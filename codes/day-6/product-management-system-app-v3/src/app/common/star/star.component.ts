@@ -12,11 +12,8 @@ export class StarComponent implements OnChanges {
   @Output() ratingChanged: EventEmitter<number> = new EventEmitter<number>()
 
   constructor() {
-    console.log('[Star] created')
   }
   ngOnChanges(changes: SimpleChanges): void {
-    // console.log(changes)
-    // console.log('changes')
     this.outerDivWidth = this.ratingValue * 14;
   }
 

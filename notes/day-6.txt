@@ -44,4 +44,33 @@ providers:[
 
 
 
+URL			  	    HTTP METHOD		Route/Body data				Response
+---------------------------------------------------------------------------------------------------------------------------------------------
+http://127.0.0.1:3003/auth/register 	POST		{"username":"", password:""}	 {"message":"", "data":{"username":"", password:""}}
+http://127.0.0.1:3003/auth/authenticate POST		{"username":"", password:""}	 {"message":"valid", "data":"gfdasfdas62321asjcv"}
+
+http://127.0.0.1:3003/products		GET		Authorization: Bearer token-value {"message":"", "data":[{},{},...]}
+http://127.0.0.1:3003/products/{id}	GET		Authorization: Bearer token-value {"message":"", "data":{...} }
+http://127.0.0.1:3003/products		POST		Authorization: Bearer token-value {"message":"", "data":[{},{}....]}
+							{"productId":1,....}
+
+http://127.0.0.1:3003/products/{id}	PUT		Authorization: Bearer token-value {"message":"", "data":[{},{}....]}
+							id:1
+							{"productName":"",....}		 
+http://127.0.0.1:3003/products/{id}	DELETE		Authorization: Bearer token-value {"message":"", "data":[{},{}....]}
+							id:1	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	

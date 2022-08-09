@@ -26,7 +26,6 @@ export class ProductListComponent implements OnInit {
   //this.productSvcRef = serviceRef
 
   constructor(@Inject(PRODUCT_SERVICE) private serviceRef: IServiceContract<number, Product>) {
-    console.log('[PL] created')
   }
 
   ngOnInit(): void {
