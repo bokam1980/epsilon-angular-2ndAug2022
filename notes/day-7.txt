@@ -27,8 +27,8 @@ Routing:
 /home => Home
 /products => PLC
 /products/view/{pid} => PDC
-/products/update/{pid} => PUC
-/products/add => PAC
+/products/update/{pid} => PUFC
+/products/add => PEFC
 
 PNF
 
@@ -57,4 +57,34 @@ guard => protecting routes
 routing and module => load modules asyncly when routes are visited
 
 testing
+
+
+Routing:
+	client-side routing supported in Angular
+	package: @angular/router
+	module: RouterModule
+		Router: this class represents the router engine (service)
+			navigate([url-fragments])
+		Routes: a type representing an array of element type Route
+		Route: represents a single route definition (interface)
+			path, component, loadChildren, children, pathMatch, redirectTo etc....
+		router-outlet: directive
+		routerLink: directive
+
+		routing module:
+			@NgModule({ imports:[RouterModule.forRoot(array of route objects)], exports:[RouterModule]})
+		routing module must be registered with corresponding module
+
+
+		finally all child routing modules are registered with root module, via their corresponding module files
+
+	nested routing
+		route object properties:
+			path:'base-route',
+			children:[{...},{...}]
+
+/products/view
+id
+
+=> /products/view/id
 

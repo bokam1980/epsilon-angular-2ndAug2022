@@ -2,7 +2,7 @@ import { Inject, Injectable } from "@angular/core";
 import { IServiceContract } from "src/models/IServiceContract.model";
 import { Product } from "src/models/product.model";
 import { HttpClient } from "@angular/common/http";
-import { Observable, pipe, map } from "rxjs";
+import { Observable } from "rxjs";
 import { ResponseModel } from "src/models/responseModel.model";
 import { AUTH_URL, PRODUCT_URL } from "src/utils/appconstants";
 
@@ -16,22 +16,6 @@ export class ProductService implements IServiceContract<number, Product> {
     getAll(): Observable<ResponseModel<Product[]>> {
         const obsProduct: Observable<ResponseModel<Product[]>> =
             this._http.get<ResponseModel<Product[]>>(this.productBaseUrl)
-        // this._http
-        //     .get(this.productBaseUrl)
-        //     .pipe(
-        //         map(
-        //             (response: any) => {
-        //                 response.data.forEach(
-        //                     (p: any) => {
-        //                         let prod: Product = {
-
-        //                         }
-        //                         return prod
-        //                     }
-        //                 )
-        //             }
-        //         )
-        //     )
         return obsProduct
     }
     /*

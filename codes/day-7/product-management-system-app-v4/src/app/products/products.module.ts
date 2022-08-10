@@ -2,22 +2,27 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { FilterProductComponent } from './components/filter-product/filter-product.component';
-import { AddProductComponent } from './components/add-product/add-product.component';
 import { ProductFilterPipe } from './pipes/product-filter.pipe';
-import { StarComponent } from '../common/star/star.component';
 import { AUTH_URL, AUTH_URL_VALUE, PRODUCT_SERVICE, PRODUCT_URL, PRODUCT_URL_VALUE, SERVICE_CLASS_NAME } from '../../utils/appconstants';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductEntryFormComponent } from './components/product-entry-form/product-entry-form.component';
+import { ProductUpdateFormComponent } from './components/product-update-form/product-update-form.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { StarComponent } from '../common/components/star/star.component';
+import { ProductRoutingModule } from './products-routing.module';
 
 @NgModule({
   declarations: [
     ProductListComponent,
     FilterProductComponent,
-    AddProductComponent,
     ProductFilterPipe,
-    StarComponent
+    StarComponent,
+    ProductEntryFormComponent,
+    ProductUpdateFormComponent,
+    ProductDetailComponent
   ],
   imports: [
-    CommonModule, HttpClientModule
+    CommonModule, HttpClientModule, ProductRoutingModule
   ],
   exports: [ProductListComponent],
   providers: [

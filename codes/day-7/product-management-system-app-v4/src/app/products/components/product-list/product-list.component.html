@@ -26,7 +26,7 @@
             <span>No records found...</span>
         </ng-template>
         <table class="table" *ngIf="productRecords && productRecords.length>0;else alternate">
-            <thead style="background-color:burlywood;">
+            <thead class="theadBackColor">
                 <tr>
                     <th>Image</th>
                     <th>Name</th>
@@ -37,7 +37,8 @@
             <tbody>
                 <tr *ngFor="let p of (productRecords|productfilter:filterText)">
                     <td>
-                        <div class="img-responsive">
+                        <!-- <div class="img-responsive" [routerLink]="['/products/view',p.productId]"> -->
+                        <div class="img-responsive" (click)="goToProductDetail(p.productId)">
                             <img [src]="p.imageUrl" alt="NA" [title]="p.productName" class="imgStyle">
                         </div>
                     </td>

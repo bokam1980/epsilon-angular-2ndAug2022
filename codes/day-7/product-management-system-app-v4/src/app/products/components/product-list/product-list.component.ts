@@ -3,7 +3,8 @@ import { PRODUCT_SERVICE } from 'src/utils/appconstants';
 import { IServiceContract } from 'src/models/IServiceContract.model';
 import { Product } from 'src/models/product.model';
 import { ResponseModel } from 'src/models/responseModel.model';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -19,16 +20,11 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   private productSubscription: Subscription | undefined;
 
-  constructor(@Inject(PRODUCT_SERVICE) private serviceRef: IServiceContract<number, Product>) {
+  constructor(@Inject(PRODUCT_SERVICE) private serviceRef: IServiceContract<number, Product>, private router: Router) {
   }
 
   ngOnDestroy(): void {
     this.productSubscription?.unsubscribe()
-    // this.productSubscription?.remove(
-    //   () => {
-    //     this.productSubscription?.unsubscribe()
-    //   }
-    // )
   }
 
   ngOnInit(): void {
@@ -55,6 +51,9 @@ export class ProductListComponent implements OnInit, OnDestroy {
     this.filterText = updatedFilterText;
   }
 
+  goToProductDetail(pid: number) {
+    this.router.navigate(['/products/view', pid])
+  }
   updateRatingOfaProduct(updatedRating: number, id: number) {
     if (this.productRecords) {
       if (this.productRecords.length > 0) {
