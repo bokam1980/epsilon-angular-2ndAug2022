@@ -1,0 +1,60 @@
+1. services
+2. service interface
+3. providers
+4. dependency injection system
+
+5. make asynchronous HTTP requests from angular
+	a. HttpClient service (@angular/common/http) - if you want to use this servive in your service, ask for DI
+		get, put, post, delete,...
+		all the methods returns an observable object
+	b. HttpClientModule (@angular/common/http) - import this in the module where your service is registered
+
+6. observable (competitor - promise)
+Reactive Extensions - JavaScript, .NET, java, scala, etc...
+
+Reactive Extensions for JavaScript => rxjs => provides APIs for composing asynchronous and event-based apps 
+provides you Observable sequences
+
+Observable: sequence of invocable collection of future values (or events)
+Observer: is a collection of callbacks for listening to the values/errors delivered by the observable
+Operators: are pure functions: map, reduce, filter, tap, concat etc.
+Subscription: which represents the execution of Observable
+Subject: like an EventEmitter
+Schedulers: are centralized disptachers to control conceurrency
+
+Routing:
+/ => Home
+/home => Home
+/products => PLC
+/products/view/{pid} => PDC
+/products/update/{pid} => PUC
+/products/add => PAC
+
+PNF
+
+
+
+Form 
+	template -driven
+	reactive form
+
+	form validation
+	custom validation
+
+directive
+	custom directive
+
+Auth:
+	component: Login, Registration
+
+token => localstorage
+
+interceptors => intercepts request and/or response
+	custom interceptor
+
+guard => protecting routes
+
+routing and module => load modules asyncly when routes are visited
+
+testing
+
