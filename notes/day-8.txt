@@ -1,0 +1,82 @@
+1. dependency injection system
+	DI of a value
+
+2. observable (an invocable collection of future values or events) and Observer (a collection of callbacks => next, error, complete), subscription (subscribe() method)
+
+3. routing
+	1. create routes and store in an array (of type Routes, containing each Route definition)
+		path, component, redirectTo, pathMatch, children
+
+		{ path: 'products', component:ProductListComponent}
+		{ path: '', redirectTo:'/products', pathMatch:'full'}
+		{ path: 'products', 
+		  children: [ {path:'', component:ProductListComponent}]
+		}
+
+	2. const routes:Routes=[{},{},....] (type Routes = Route[])
+
+	3. register the routes with module
+		- import RouterModule and call forRoot() method and pass the array of routes to the method
+		- placement
+			a. separate routing module file and then register the routing module with the corresponding feature module
+			b. directly with the fetaure module
+
+	4. outlet:
+		router-outlet directive (attribute directive) to render the routed components
+		in routed components YOU DO NOT NEED selector PROPERTY
+	5. links:
+		routerLink directive (attribute directive)
+		like anchor (a) in HTML but the default behavior (reloading the app) is disbaled/suppressed
+
+		<HTML-element routerLink='route-url'>
+		<HTML-element [routerLink]="['part1','part2']">
+		<HTML-element [routerLink]="['part1','part2', <dynamic-value(property of component)>]">
+	6. programmatical redirection
+		Router service => navigate(an array of fragments of URL)/navigateByUrl (string url)
+
+	7. how to fecth route information in a component
+		ActivatedRoute => helps you to get information about a route associated with a component, that is loaded currently in an outlet
+
+		http://localhost:4200/products/view/2 =>AR
+		http://localhost:4200/products => AR
+		http://localhost:4200/products/add => AR
+
+
+		a collection of those AR objects => RouterState
+
+		RouterState => a tree of ActivatedRoute instances
+
+		class RouterState extends Tree<ActivatedRoute>{
+			snapshot: RouterStateSnapshot
+		}
+
+		class ActivatedRoute{
+
+			snapshot: ActicatedRouteSnapshot;
+			url: Observable<UrlSegment[]>
+			params:Observable<Params>
+			queryParams: Observable<Params>
+			fragments:Observable<string|null>
+			outlet:string
+			component:Type<any>
+			parent:ActivatedRoute
+			root: ActivatedRoute
+			children:ActivatedRoute[]
+			............................
+		}
+
+		helps you to get information about a route associated with a component, that is loaded currently in an outlet at that moment
+		class ActicatedRouteSnapshot{
+			url: UrlSegment[]
+			params:Params
+			queryParams: Params
+			fragments:string[]|null
+			outlet:string
+			component:Type<any>|null
+			parent:ActivatedRouteSnapshot
+			root: ActivatedRouteSnapshot
+			children: ActivatedRouteSnapshot[]
+		}
+
+
+
