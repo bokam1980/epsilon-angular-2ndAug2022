@@ -78,5 +78,15 @@
 			children: ActivatedRouteSnapshot[]
 		}
 
+forms in Angular:
+	template-driven forms: forms and its controls represented by directives like ngForm (FormGroup), ngModel (FormControl). validations are applied throuh directives
+	Template controls everything about form and its controls
+	Reactive Forms: forms and its controls represented by FormGroup, FormControl objects directly, which you can control from code. validations are also controlled by code
+	Code control everything about form and its controls
+
+
+HTML input element properties:
+		value, dirty, pristine, touched, errors, valid etc....
+
 
 

@@ -30,6 +30,10 @@ export class ProductUpdateFormComponent implements OnInit, OnDestroy {
         .pipe(
           switchMap(
             (parameters) => {
+              // return {
+              //   data1: this.productSvc.get(Number(parameters['id']))
+              //   data2: this.someSvc.get(parameters['name'])
+              // }
               return this.productSvc.get(Number(parameters['id']))
             }
           )
