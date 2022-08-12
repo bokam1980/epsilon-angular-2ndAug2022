@@ -14,3 +14,13 @@
 	a. capture user input events from the template/view
 	b. validate user input
 	c. create a form model and data model to update and provide a way to track changes
+
+ValidationErrors interface
+
+interface ValidationErrors{
+	[key:string]:any;
+}
+
+formControl.errors => { 'email': true}, { 'required': true}, { 'minlength': { actualLength:, requiredLength:}}
+
+formControl?.errors?.['email']

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+// import { passwordValidator, validatePassword } from '../../validators/passwordValidator';
+import { validatePassword } from '../../validators/passwordValidator';
 
 @Component({
   selector: 'app-login',
@@ -23,9 +25,14 @@ export class LoginComponent implements OnInit {
   loginFrm?: FormGroup;
   constructor(private builder: FormBuilder) {
     //3. creating iinstnce or formgroup with a collection of formcotntrols using FormBuilder service
+    // this.loginFrm = this.builder.group({
+    //   'username': ['', [Validators.required, Validators.email]],
+    //   'password': ['', [Validators.required, Validators.minLength(6)]]
+    // })
     this.loginFrm = this.builder.group({
       'username': ['', [Validators.required, Validators.email]],
-      'password': ['', [Validators.required, Validators.minLength(6)]]
+      // 'password': ['', [Validators.required, passwordValidator]]
+      'password': ['', [Validators.required, validatePassword(6, 12)]]
     })
   }
 

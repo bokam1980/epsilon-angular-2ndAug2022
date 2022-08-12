@@ -24,7 +24,7 @@
                 <div class="form-group">
                     <label for="password">Password:</label>
                     <input type="password" name="password" id="password" class="form-control"
-                        [(ngModel)]='userInfo.password' #pwd="ngModel" required [minlength]="6" [maxlength]="12"
+                        [(ngModel)]='userInfo.password' #pwd="ngModel" required appPassword
                         placeholder="enter password [min length6 and max length 12]">
 
                     <!-- error displayer -->
@@ -32,14 +32,33 @@
                         <div *ngIf="pwd.errors?.['required']">
                             password is required
                         </div>
-                        <div *ngIf="pwd.errors?.['minlength']">
+                        <div *ngIf="pwd?.errors?.['minimum']">
+                            minimum length should be {{pwd?.errors?.['minimum'].expected}}, whereas actual
+                            length
+                            is {{pwd?.errors?.['minimum'].actual}}
+                        </div>
+                        <div *ngIf="pwd?.errors?.['maximum']">
+                            maximum length should be {{pwd?.errors?.['maximum'].expected}}, whereas actual
+                            length
+                            is {{pwd?.errors?.['maximum'].actual}}
+                        </div>
+                        <div *ngIf="pwd?.errors?.['lower']">
+                            {{pwd?.errors?.['lower']}}
+                        </div>
+                        <div *ngIf="pwd?.errors?.['upper']">
+                            {{pwd?.errors?.['upper']}}
+                        </div>
+                        <div *ngIf="pwd?.errors?.['digit']">
+                            {{pwd?.errors?.['digit']}}
+                        </div>
+                        <!-- <div *ngIf="pwd.errors?.['minlength']">
                             minimum length should be {{pwd.errors?.['minlength'].requiredLength}}, whereas actual length
                             is {{pwd.errors?.['minlength'].actualLength}}
                         </div>
                         <div *ngIf="pwd.errors?.['maxlength']">
                             maximum length should be {{pwd.errors?.['maxlength'].requiredLength}}, whereas actual length
                             is {{pwd.errors?.['maxlength'].actualLength}}
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 

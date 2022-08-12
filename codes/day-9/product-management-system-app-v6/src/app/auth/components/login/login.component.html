@@ -27,11 +27,30 @@
                         <div *ngIf="password?.errors?.['required']">
                             password is required
                         </div>
-                        <div *ngIf="password?.errors?.['minlength']">
+                        <div *ngIf="password?.errors?.['minimum']">
+                            minimum length should be {{password?.errors?.['minimum'].expected}}, whereas actual
+                            length
+                            is {{password?.errors?.['minimum'].actual}}
+                        </div>
+                        <div *ngIf="password?.errors?.['maximum']">
+                            maximum length should be {{password?.errors?.['maximum'].expected}}, whereas actual
+                            length
+                            is {{password?.errors?.['maximum'].actual}}
+                        </div>
+                        <div *ngIf="password?.errors?.['lower']">
+                            {{password?.errors?.['lower']}}
+                        </div>
+                        <div *ngIf="password?.errors?.['upper']">
+                            {{password?.errors?.['upper']}}
+                        </div>
+                        <div *ngIf="password?.errors?.['digit']">
+                            {{password?.errors?.['digit']}}
+                        </div>
+                        <!-- <div *ngIf="password?.errors?.['minlength']">
                             minimum length should be {{password?.errors?.['minlength'].requiredLength}}, whereas actual
                             length
                             is {{password?.errors?.['minlength'].actualLength}}
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="centerStyle">

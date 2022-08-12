@@ -10,6 +10,7 @@ import { ProductUpdateFormComponent } from './components/product-update-form/pro
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { StarComponent } from '../common/components/star/star.component';
 import { ProductRoutingModule } from './products-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { ProductRoutingModule } from './products-routing.module';
     ProductDetailComponent
   ],
   imports: [
-    CommonModule, HttpClientModule, ProductRoutingModule
+    FormsModule, ReactiveFormsModule, CommonModule, HttpClientModule, ProductRoutingModule
   ],
   exports: [ProductListComponent],
   providers: [
