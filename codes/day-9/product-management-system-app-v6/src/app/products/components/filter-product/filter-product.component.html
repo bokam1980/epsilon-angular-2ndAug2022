@@ -1,0 +1,7 @@
+<div class="col-md-2">
+    <label for="txtfilter">Filter By: &nbsp;</label>
+</div>
+<div class="col-md-4">
+    <input type="text" name="txtFilter" id="txtfilter" [value]="filterValue"
+        (change)="filterValueUpdated(filterInput.value)" #filterInput>
+</div>

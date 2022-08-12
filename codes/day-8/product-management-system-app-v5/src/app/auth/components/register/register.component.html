@@ -4,8 +4,6 @@
             <form ngForm #frm="ngForm">
                 <div class="form-group">
                     <label for="username">UserName:</label>
-                    <!-- <input type="email" name="username" id="username" class="form-control" [value]="username"
-                        (change)="updateUsername(uname)" #uname> -->
                     <input type="email" name="txtUserName" id="username" class="form-control" [(ngModel)]="username"
                         required email #uname="ngModel">
                 </div>
@@ -14,6 +12,31 @@
                     <input type="password" name="txtPassword" id="password" class="form-control" [(ngModel)]='password'
                         #pwd="ngModel" required>
                 </div>
+
+                <!--1. passing individual ngModel objects from UI-->
+                <!-- <div class="centerStyle">
+                    <button type="button" class="btn btn-primary" (click)="submitUser(uname, pwd)"
+                        [disabled]="!frm.valid">
+                        Register {{frm.touched}}
+                    </button>
+                </div> -->
+
+                <!--2. passing individual FormControl objects from UI-->
+                <!-- <div class="centerStyle">
+                                    <button type="button" class="btn btn-primary" (click)="submitUser(uname.control, pwd.control)"
+                                        [disabled]="!frm.valid">
+                                        Register {{frm.touched}}
+                                    </button>
+                                </div> -->
+
+                <!-- 3. passing entire NgForm object from UI-->
+
+                <!-- <div class="centerStyle">
+                    <button type="button" class="btn btn-primary" (click)="submitUser(frm)" [disabled]="!frm.valid">
+                        Register {{frm.touched}}
+                    </button>
+                </div> -->
+                <!--  4. passing entire FromGroup object from UI-->
                 <div class="centerStyle">
                     <button type="button" class="btn btn-primary" (click)="submitUser(frm.form)"
                         [disabled]="!frm.valid">

@@ -1,0 +1,16 @@
+1. routing
+	how to extract route information in the component code, which is currently loaded in the outlet
+	ActivatedRoute (snapshot property)=> ActivatedRouteSnapshot
+	RouterState => tree of ActivatedRoute objects
+
+	ActivatedRoute .params		ActivatedRouteSnapshot. params
+	=> Observable<Params>		=> Params
+
+2. forms:
+	NG provides 2 approaches for handling user input through forms
+		template-driven forms: depends on some directives (ngModel, ngForm) in the template to create and manipulate the underlying form object model
+		reactive forms: provides direct and explicit access to the underlying forms object model
+
+	a. capture user input events from the template/view
+	b. validate user input
+	c. create a form model and data model to update and provide a way to track changes
