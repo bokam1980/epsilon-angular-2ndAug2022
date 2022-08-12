@@ -10,11 +10,12 @@
                         placeholder="enter username [in email format]">
 
                     <!-- error displayer -->
-                    <div class="alert alert-danger" *ngIf="uname.invalid && (uname.dirty || uname.touched)">
-                        <div *ngIf="uname.errors?.['required']">
+                    <div class="alert alert-danger"
+                        *ngIf="uname.control.invalid && (uname.control.dirty || uname.control.touched)">
+                        <div *ngIf="uname.control.errors?.['required']">
                             username is required
                         </div>
-                        <div *ngIf="uname.errors?.['email']">
+                        <div *ngIf="uname.control.errors?.['email']">
                             username should be in email format
                         </div>
                     </div>
