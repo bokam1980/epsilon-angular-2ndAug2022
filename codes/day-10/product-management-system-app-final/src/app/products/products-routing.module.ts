@@ -1,31 +1,15 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { AuthGuard } from "../services/gurad/auth.guard";
 import { ProductDetailComponent } from "./components/product-detail/product-detail.component";
 import { ProductEntryFormComponent } from "./components/product-entry-form/product-entry-form.component";
 import { ProductListComponent } from "./components/product-list/product-list.component";
 import { ProductUpdateFormComponent } from "./components/product-update-form/product-update-form.component";
 
-// const productRoutes: Routes = [
-//     {
-//         path: 'products',
-//         component: ProductListComponent
-//     },
-//     {
-//         path: 'products/view/:id',
-//         component: ProductDetailComponent
-//     },
-//     {
-//         path: 'products/update/:id',
-//         component: ProductUpdateFormComponent
-//     },
-//     {
-//         path: 'products/add',
-//         component: ProductEntryFormComponent
-//     },
-// ]
 const productRoutes: Routes = [
     {
         path: 'products',
+        canActivateChild: [AuthGuard],
         children: [
             {
                 path: '',

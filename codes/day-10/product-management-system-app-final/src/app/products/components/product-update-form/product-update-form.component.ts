@@ -2,7 +2,7 @@ import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription, switchMap } from 'rxjs';
-import { IServiceContract } from 'src/models/IServiceContract.model';
+import { IProductService } from 'src/models/productservice-interface.model';
 import { Product } from 'src/models/product.model';
 import { ResponseModel } from 'src/models/responseModel.model';
 import { PRODUCT_SERVICE } from 'src/utils/appconstants';
@@ -22,7 +22,7 @@ export class ProductUpdateFormComponent implements OnInit, OnDestroy {
   private subscription?: Subscription;
   constructor(
     private route: ActivatedRoute,
-    @Inject(PRODUCT_SERVICE) private productSvc: IServiceContract<number, Product>,
+    @Inject(PRODUCT_SERVICE) private productSvc: IProductService<number, Product>,
     private builder: FormBuilder,
     private router: Router) {
 

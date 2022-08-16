@@ -8,6 +8,8 @@ import { DashboardComponent } from './common/components/dashboard/dashboard.comp
 import { PageNotFoundComponent } from './common/components/page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
+import { INTERCEPTOR_SERVICE, INTERCEPTOR_SERVICE_CLASS_NAME, TOKEN_SERVICE, TOKEN_SERVICE_CLASS_NAME, AUTH_SERVICE, AUTH_SERVICE_CLASS_NAME, AUTH_URL, AUTH_URL_VALUE } from 'src/utils/appconstants';
+import { AuthGuard } from './services/gurad/auth.guard';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,18 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     BrowserModule, AuthModule, ProductsModule, AppRoutingModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    {
+      provide: TOKEN_SERVICE,
+      useClass: TOKEN_SERVICE_CLASS_NAME
+    },
+    {
+      provide: INTERCEPTOR_SERVICE,
+      useClass: INTERCEPTOR_SERVICE_CLASS_NAME,
+      multi: true
+    },
+    AuthGuard
+  ]
 })
 export class AppModule { }

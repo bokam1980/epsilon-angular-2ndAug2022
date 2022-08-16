@@ -1,5 +1,5 @@
 import { Inject, Injectable } from "@angular/core";
-import { IServiceContract } from "src/models/IServiceContract.model";
+import { IProductService } from "src/models/productservice-interface.model";
 import { Product } from "src/models/product.model";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
@@ -7,7 +7,7 @@ import { ResponseModel } from "src/models/responseModel.model";
 import { AUTH_URL, PRODUCT_URL } from "src/utils/appconstants";
 
 @Injectable()
-export class ProductService implements IServiceContract<number, Product> {
+export class ProductService implements IProductService<number, Product> {
 
     constructor(private _http: HttpClient, @Inject(AUTH_URL) private authBaseUtl: string, @Inject(PRODUCT_URL) private productBaseUrl: string) {
 

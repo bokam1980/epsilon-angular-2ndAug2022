@@ -2,3 +2,36 @@
 2. authentication and routing
 3. interceptors
 4. testing
+
+
+a. register
+b. authenticate => token
+c. save token
+d. gurad your other URLs/routes => logged in? fetch token
+e. intercept request/response
+
+service:
+	registerUser (username,password)
+	authenticateUser(username,password)
+	saveToken(toekn)
+	fetchToken()
+	isLoggedIn()
+	logout()
+	
+interceptor:
+	intercept every request (except auth and register) and embed the token to pass to the backend
+
+route gurads: stop unauthorized access (to protect routes)
+	CanActivate:a route can be activated or not
+	CanActivateChild: a child route can be activated or not
+	CanDeactivate: a route can be deactivated or not
+	Resolve: it can help you to act as a data provider
+	CanLoad: a children can be loaded or not
+
+export class XGurad implements CanActivate{
+	canActivate(next:ActivatedRouteSnapshot, state: RouterStateSnapshot):boolean{
+		//code
+	}
+	resolve(next:ActivatedRouteSnapshot, state: RouterStateSnapshot){
+	}
+}

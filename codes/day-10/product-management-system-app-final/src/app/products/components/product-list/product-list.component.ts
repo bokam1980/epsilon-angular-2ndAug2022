@@ -1,6 +1,6 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { PRODUCT_SERVICE } from 'src/utils/appconstants';
-import { IServiceContract } from 'src/models/IServiceContract.model';
+import { IProductService } from 'src/models/productservice-interface.model';
 import { Product } from 'src/models/product.model';
 import { ResponseModel } from 'src/models/responseModel.model';
 import { Subscription } from 'rxjs';
@@ -20,7 +20,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   private productFetchSubscription?: Subscription;
   private productDeleteSubscription?: Subscription;
 
-  constructor(@Inject(PRODUCT_SERVICE) private serviceRef: IServiceContract<number, Product>, private router: Router) {
+  constructor(@Inject(PRODUCT_SERVICE) private serviceRef: IProductService<number, Product>, private router: Router) {
   }
 
   ngOnDestroy(): void {

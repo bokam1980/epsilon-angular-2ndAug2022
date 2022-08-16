@@ -9,8 +9,11 @@
         <button class="btn btn-group" type="button" [routerLink]="['products','add']">
             Add New Product
         </button>
-        <button class="btn btn-group" type="button" routerLink="/login">
+        <button class="btn btn-group" type="button" routerLink="/login" *ngIf="!isLogged()">
             Login
+        </button>
+        <button class="btn btn-group" type="button" routerLink="/login" *ngIf="isLogged()" (click)="logout()">
+            LogOut
         </button>
         <button class="btn btn-group" type="button" routerLink="/register">
             Register

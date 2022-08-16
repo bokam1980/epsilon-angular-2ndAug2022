@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
 import { ResponseModel } from "./responseModel.model";
 
-export interface IServiceContract<in TId, TModel> {
+export interface IProductService<in TId, TModel> {
     getAll(): Observable<ResponseModel<TModel[]>>;
     get(id: TId): Observable<ResponseModel<TModel>>;
     insert(obj: TModel): Observable<ResponseModel<TModel[]>>;

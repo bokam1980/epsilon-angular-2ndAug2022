@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ITokenService } from 'src/models/tokenservice-interface.model';
+import { TOKEN_SERVICE } from 'src/utils/appconstants';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(@Inject(TOKEN_SERVICE) private tokenSvc: ITokenService, private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  isLogged() {
+    return this.tokenSvc.isLoggedIn()
+  }
+  logout() {
+    this.tokenSvc.removeToken()
+    this.router.navigate(['/login'])
+  }
 }

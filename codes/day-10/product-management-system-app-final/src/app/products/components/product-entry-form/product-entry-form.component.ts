@@ -2,7 +2,7 @@ import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IServiceContract } from 'src/models/IServiceContract.model';
+import { IProductService } from 'src/models/productservice-interface.model';
 import { Product } from 'src/models/product.model';
 import { ResponseModel } from 'src/models/responseModel.model';
 import { PRODUCT_SERVICE } from 'src/utils/appconstants';
@@ -15,7 +15,7 @@ export class ProductEntryFormComponent implements OnInit, OnDestroy {
 
   constructor(
     private builder: FormBuilder,
-    @Inject(PRODUCT_SERVICE) private productSvc: IServiceContract<number, Product>,
+    @Inject(PRODUCT_SERVICE) private productSvc: IProductService<number, Product>,
     private router: Router) { }
 
   ngOnDestroy(): void {

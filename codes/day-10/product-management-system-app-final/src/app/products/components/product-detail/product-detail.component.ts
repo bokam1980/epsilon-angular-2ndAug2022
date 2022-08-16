@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Params } from '@angular/router';
 import { map, Observable, Subscription, switchMap } from 'rxjs';
-import { IServiceContract } from 'src/models/IServiceContract.model';
+import { IProductService } from 'src/models/productservice-interface.model';
 import { Product } from 'src/models/product.model';
 import { ResponseModel } from 'src/models/responseModel.model';
 import { PRODUCT_SERVICE } from 'src/utils/appconstants';
@@ -18,7 +18,7 @@ export class ProductDetailComponent implements OnInit {
   errorMessage = ''
 
   private subscription?: Subscription;
-  constructor(private currentRoute: ActivatedRoute, @Inject(PRODUCT_SERVICE) private productSvc: IServiceContract<number, Product>) {
+  constructor(private currentRoute: ActivatedRoute, @Inject(PRODUCT_SERVICE) private productSvc: IProductService<number, Product>) {
   }
 
   ngOnInit(): void {
