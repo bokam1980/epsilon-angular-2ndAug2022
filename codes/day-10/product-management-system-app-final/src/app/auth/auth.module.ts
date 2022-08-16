@@ -18,8 +18,8 @@ import { AUTH_SERVICE, AUTH_SERVICE_CLASS_NAME, AUTH_URL, AUTH_URL_VALUE, TOKEN_
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
@@ -34,6 +34,7 @@ import { AUTH_SERVICE, AUTH_SERVICE_CLASS_NAME, AUTH_URL, AUTH_URL_VALUE, TOKEN_
     //   provide: TOKEN_SERVICE,
     //   useClass: TOKEN_SERVICE_CLASS_NAME
     // }
-  ]
+  ],
+  bootstrap: [LoginComponent]
 })
 export class AuthModule { }
