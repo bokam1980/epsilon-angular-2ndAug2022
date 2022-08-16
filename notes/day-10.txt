@@ -1,0 +1,4 @@
+1. recap : reactive form
+2. authentication and routing
+3. interceptors
+4. testing

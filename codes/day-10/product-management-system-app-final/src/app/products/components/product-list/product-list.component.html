@@ -1,0 +1,62 @@
+<div class="panel panel-primary">
+    <div class="panel panel-body">
+        <div class="row">
+            <app-filter-product [filterCriteria]="filterText" (filterChanged)="updateFilterText($event)">
+            </app-filter-product>
+            <div class="col-md-2">
+                Sort By: &nbsp;
+            </div>
+            <div class="col-md-4">
+                <select title="Select an Option to sort">
+                    <option>--select--</option>
+                    <option>Name</option>
+                    <option>Id</option>
+                    <option>Price</option>
+                    <option>Rating</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <br>
+    <ng-template #spinner>
+        <span>Loading...</span>
+    </ng-template>
+    <div class="table-responsive" *ngIf="!loading;else spinner">
+        <ng-template #alternate>
+            <span>No records found...</span>
+        </ng-template>
+        <table class="table" *ngIf="productRecords && productRecords.length>0;else alternate">
+            <thead class="theadBackColor">
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of (productRecords|productfilter:filterText)">
+                    <td>
+                        <div class="img-responsive" (click)="goToProductDetail(p.productId, p.productName)">
+                            <img [src]="p.imageUrl" alt="NA" [title]="p.productName" class="imgStyle">
+                        </div>
+                    </td>
+                    <td>{{p.productName|uppercase}}</td>
+                    <td>{{p.price|currency:'INR'}}</td>
+                    <td>
+                        <app-star [ratingValue]="p.starRating"
+                            (ratingChanged)="updateRatingOfaProduct($event,p.productId)">
+                        </app-star>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteRecord(p.productId)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="errorMessage!==''">
+            <span>{{errorMessage}}</span>
+        </div>
+    </div>
+</div>

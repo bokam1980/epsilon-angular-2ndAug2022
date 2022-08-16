@@ -11,12 +11,12 @@
     },
     {
         "productId": 2,
-        "price": 50,
         "productName": "Garden Cart",
-        "description": "15 gallon capacity rolling garden cart",
         "productCode": "GDN-0023",
-        "releaseDate": "March 18, 2019",
-        "starRating": 4,
+        "releaseDate": "March 22, 2022",
+        "description": "15 gallon capacity rolling garden cart",
+        "price": 500,
+        "starRating": 4.5,
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
     },
     {
@@ -46,26 +46,6 @@
         "releaseDate": "October 15, 2015",
         "description": "Standard two-button video game controller",
         "price": 67,
-        "starRating": 4,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
-    },
-    {
-        "productName": "Test Product",
-        "productCode": "GDN-0011",
-        "releaseDate": "March 23, 2021",
-        "description": "Leaf rake with 48-inch wooden handle.",
-        "price": 200,
-        "starRating": 4,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png",
-        "productId": 6
-    },
-    {
-        "productId": null,
-        "productName": "dell xps",
-        "productCode": "abcd-1234",
-        "releaseDate": "8/9/2022",
-        "description": "good",
-        "price": 100000,
         "starRating": 4,
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     }

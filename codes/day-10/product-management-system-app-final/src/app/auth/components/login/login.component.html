@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-6-offest-3" *ngIf="loginFrm">
+            <form [formGroup]="loginFrm" (submit)="submitUser()">
+                <!-- <form> -->
+                <div class="form-group">
+                    <label for="username">UserName:</label>
+                    <input type="email" name="username" id="username" class="form-control" formControlName="username">
+                    <!-- error displayer -->
+                    <div class="alert alert-danger" *ngIf="username?.invalid && (username?.dirty || username?.touched)">
+                        <div *ngIf="username?.errors?.['required']">
+                            username is required
+                        </div>
+                        <div *ngIf="username?.errors?.['email']">
+                            username should be in email format
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" class="form-control"
+                        formControlName="password">
+                    <!-- error displayer -->
+                    <div class="alert alert-danger" *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                        <div *ngIf="password?.errors?.['required']">
+                            password is required
+                        </div>
+                        <div *ngIf="password?.errors?.['minimum']">
+                            minimum length should be {{password?.errors?.['minimum'].expected}}, whereas actual
+                            length
+                            is {{password?.errors?.['minimum'].actual}}
+                        </div>
+                        <div *ngIf="password?.errors?.['maximum']">
+                            maximum length should be {{password?.errors?.['maximum'].expected}}, whereas actual
+                            length
+                            is {{password?.errors?.['maximum'].actual}}
+                        </div>
+                        <div *ngIf="password?.errors?.['lower']">
+                            {{password?.errors?.['lower']}}
+                        </div>
+                        <div *ngIf="password?.errors?.['upper']">
+                            {{password?.errors?.['upper']}}
+                        </div>
+                        <div *ngIf="password?.errors?.['digit']">
+                            {{password?.errors?.['digit']}}
+                        </div>
+                    </div>
+                </div>
+                <div class="centerStyle">
+                    <button type="submit" class="btn btn-primary" [disabled]="!loginFrm.valid">
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

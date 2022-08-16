@@ -1,0 +1,141 @@
+<ng-template #spinner>
+    <span>Loading...</span>
+</ng-template>
+<ng-template #alternate>
+    <span>No record found...</span>
+</ng-template>
+<div *ngIf="errorMessage!==''">
+    <span>{{errorMessage}}</span>
+</div>
+<div *ngIf="!loading;else spinner">
+    <div class="container" *ngIf="productToUpdate && productToUpdate!==null;else alternate">
+        <div class="row" *ngIf="updateFrm">
+            <div class="col-xs-12 col-md-6 col-md-6-offest-3">
+                <form class="form-horizontal" [formGroup]="updateFrm" (submit)="submitUser()">
+                    <div class="form-group">
+                        <label for="productId">Id:</label>
+                        <input type="number" name="productId" id="productId" class="form-control"
+                            placeholder="enter product id" formControlName="productId" readonly>
+
+                        <!-- error displayer -->
+                        <div class="alert alert-danger"
+                            *ngIf="productId?.invalid && (productId?.dirty || productId?.touched)">
+                            <div *ngIf="productId?.errors?.['required']">
+                                productId is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productName">Name:</label>
+                        <input type="text" name="productName" id="productName" class="form-control"
+                            placeholder="enter product name" formControlName="productName">
+
+                        <!-- error displayer -->
+                        <div class="alert alert-danger"
+                            *ngIf="productName?.invalid && (productName?.dirty || productName?.touched)">
+                            <div *ngIf="productName?.errors?.['required']">
+                                product name is required
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productCode">Code:</label>
+                        <input type="text" name="productCode" id="productCode" class="form-control"
+                            placeholder="enter product code" formControlName="productCode">
+
+                        <!-- error displayer -->
+                        <div class="alert alert-danger"
+                            *ngIf="productCode?.invalid && (productCode?.dirty || productCode?.touched)">
+                            <div *ngIf="productCode?.errors?.['required']">
+                                product code is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <input type="text" name="description" id="description" class="form-control"
+                            placeholder="enter product description" formControlName="description">
+
+                        <!-- error displayer -->
+                        <div class="alert alert-danger"
+                            *ngIf="description?.invalid && (description?.dirty || description?.touched)">
+                            <div *ngIf="description?.errors?.['required']">
+                                description is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="releaseDate">Released On:</label>
+                        <input type="datetime" name="releaseDate" id="releaseDate" class="form-control"
+                            placeholder="enter product releaseDate" formControlName="releaseDate">
+
+                        <!-- error displayer -->
+                        <div class="alert alert-danger"
+                            *ngIf="releaseDate?.invalid && (releaseDate?.dirty || releaseDate?.touched)">
+                            <div *ngIf="releaseDate?.errors?.['required']">
+                                releaseDate is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="number" name="price" id="price" class="form-control"
+                            placeholder="enter product price" formControlName="price">
+
+                        <!-- error displayer -->
+                        <div class="alert alert-danger" *ngIf="price?.invalid && (price?.dirty || price?.touched)">
+                            <div *ngIf="price?.errors?.['required']">
+                                price is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="starRating">Rating:</label>
+                        <input type="number" name="starRating" id="starRating" class="form-control"
+                            placeholder="enter product rating" formControlName="starRating">
+
+                        <!-- error displayer -->
+                        <div class="alert alert-danger"
+                            *ngIf="starRating?.invalid && (starRating?.dirty || starRating?.touched)">
+                            <div *ngIf="starRating?.errors?.['required']">
+                                starRating is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imageUrl">URL:</label>
+                        <input type="text" name="imageUrl" id="imageUrl" class="form-control"
+                            placeholder="enter product url" formControlName="imageUrl">
+
+                        <!-- error displayer -->
+                        <div class="alert alert-danger"
+                            *ngIf="imageUrl?.invalid && (imageUrl?.dirty || imageUrl?.touched)">
+                            <div *ngIf="imageUrl?.errors?.['required']">
+                                imageUrl is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid centerStyle">
+                        <button type="submit" class="btn btn-primary" [disabled]="!updateFrm.valid">
+                            Submit
+                        </button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="btn btn-danger" [disabled]="!updateFrm.valid"
+                            (click)="cancelSubmission()">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
